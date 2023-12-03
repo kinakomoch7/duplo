@@ -13,7 +13,7 @@ import { MINT_GREEN } from './common/style';
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div style={{backgroundColor:MINT_GREEN}}>
+      <div style={{backgroundColor:MINT_GREEN, height:'100vh', width:'100%'}}>
       <Routes >
         <Route path={HOME_PATH} element={ <Home /> } />
         <Route path={REGISTER_PATH} element={ <Register /> } />
