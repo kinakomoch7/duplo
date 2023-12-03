@@ -4,7 +4,9 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(),
+  plugins: [react({
+    jsxImportSource: '@emotion/react',
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       devOptions: {
@@ -16,19 +18,19 @@ export default defineConfig({
         description: "duplo",
         icons: [
           {
-            src: "app_icon/icon-192.png",
-            type: "image/png",
+            src: "./public/images/vite.svg",
+            type: "image/svg",
             sizes: "192x192"
           },
           {
-            src: "app_icon/icon-512.png",
+            src: "./public/images/vite.svg",
             sizes: "512x512",
-            type: "image/png"
+            type: "image/svg"
           },
           {
-            src: "app_icon/icon-512.png",
+            src: "./public/images/vite.svg",
             sizes: "512x512",
-            type: "image/png",
+            type: "image/svg",
             purpose: "any maskable"
           }
         ],
