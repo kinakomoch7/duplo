@@ -2,7 +2,7 @@ import { TypographyProps } from '@mui/material/Typography';
 import { CSSProperties } from 'react';
 import { BLACK } from '../style';
 
-const FOTTER_ICON_SIZE = 40;
+const FOTTER_ICON_SIZE = 30;
 
 export const FooterIconStyle: CSSProperties = {
   width: FOTTER_ICON_SIZE,
