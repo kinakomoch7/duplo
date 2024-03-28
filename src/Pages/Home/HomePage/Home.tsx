@@ -7,10 +7,10 @@ export const Home = () => {
 
   return (
     <div css={styles.container}>
-      <EachPay />
+      {/* <EachPay />
       <div css={styles.differenceBox}>
         <DifferencePay />
-      </div>
+      </div> */}
     </div>
   );
 };

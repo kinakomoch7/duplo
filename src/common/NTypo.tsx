@@ -1,4 +1,4 @@
-import { Typography, TypographyProps } from "@mui/material"
+import Typography, {TypographyProps} from "@mui/material/Typography"
 import { commonTextStyle } from "./style"
 
 export const NTypo = (props: TypographyProps) => {

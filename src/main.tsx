@@ -8,13 +8,13 @@ import { NotFound } from './Pages/NotFound/NotFound';
 import { Menu } from './Pages/Menu/Menu';
 import { HOME_PATH, MENU_PATH, REGISTER_PATH } from './constants/path';
 import { Footer } from './common/Footer/Footer';
-import { MINT_GREEN } from './common/style';
+import { MINT_GREEN, WHITE } from './common/style';
 import { NBox } from './common/NBox';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
-      <div style={{backgroundColor:MINT_GREEN, height:'100vh', width:'100%'}}>
+      <div style={{backgroundColor:WHITE, height:'100vh', width:'100%'}}>
         <NBox style={{ width:'100%', height:'5vh' }} />
         <Routes >
           <Route path={HOME_PATH} element={ <Home /> } />

@@ -5,10 +5,12 @@ import { HOME_PATH, MENU_PATH, REGISTER_PATH } from "../../constants/path";
 import { useNavigate } from "react-router-dom";
 import { NIconButton } from "../NIconButton";
 import { NIconButtonProps } from "../../types/IconButtonProps";
-import { NBox } from "../NBox";
-import { NBoxProps } from "./style";
 import { HOME, MENU, REGISTER } from '../../constants/Footer';
-import { BLACK } from '../style';
+import { WHITE } from '../style';
+import AppBar from '@mui/material/AppBar';
+import Container from '@mui/material/Container';
+import { FooterIconStyle, footerTypoStyle } from './style';
+
 
 export const Footer = () => {
 
@@ -18,64 +20,50 @@ export const Footer = () => {
     navigate(path)
   }
 
+
   const IconPropsLists:NIconButtonProps[] = [
   { 
     ButtonProps:{
       onClick: ()=>eventHandler(HOME_PATH),
     },
-    Icon:<HomeIcon sx={{ width:70, height:70, color:BLACK }} />,
+    Icon:<HomeIcon sx={FooterIconStyle} />,
     TypoProps:{
       children: HOME,
-      sx:{
-        color:BLACK,
-        textAlign:'center',
-        fontWeight: 'bold'
-      }
+      ...footerTypoStyle
     }
   },
   {
     ButtonProps:{
-      sx:{
-        marginTop:1
-      },
       onClick: ()=>eventHandler(REGISTER_PATH)
     },
-    Icon:<AddCardIcon sx={{ width:70, height:70, color:BLACK }} />,
+    Icon:<AddCardIcon sx={FooterIconStyle} />,
     TypoProps:{
       children:REGISTER,
-      sx:{
-        color:BLACK,
-        textAlign:'center',
-        fontWeight:'bold'
-      }
+      ...footerTypoStyle
     }
   },
   {
     ButtonProps:{
       onClick: ()=>eventHandler(MENU_PATH)
     },
-    Icon:<FormatListBulletedIcon sx={{ width:70, height:70, color:BLACK }} />,
+    Icon:<FormatListBulletedIcon sx={FooterIconStyle} />,
     TypoProps:{
       children:MENU,
-      sx:{
-        color:BLACK,
-        textAlign:'center',
-        fontWeight:'bold'
-      }
+      ...footerTypoStyle
     }
   }]
 
 
 
   return (
-    <div style={{ width:'100%' , position:'absolute', bottom:0 }}>
-      <NBox {...NBoxProps[0]} >
-        <div style={{ display:'flex', flexDirection:'row', justifyContent:'space-evenly' }} >
-          <NBox ><NIconButton {...IconPropsLists[0]} /></NBox>
-          <NBox {...NBoxProps[1]} ><NIconButton {...IconPropsLists[1]} /></NBox>
-          <NBox ><NIconButton {...IconPropsLists[2]} /></NBox>
-        </div>
-      </NBox>
-    </div>
+    <AppBar component='footer' position='static' sx={{ backgroundColor:WHITE, position:'absolute', bottom:0 }}>
+      <Container maxWidth='md' sx={{ display: 'flex', justifyContent:'space-evenly'}}>
+          {IconPropsLists.map((item) => {
+            return (
+              <NIconButton {...item} />
+            )
+          })}
+      </Container>
+    </AppBar>
   );
 };
