@@ -12,6 +12,7 @@ export default defineConfig({
       devOptions: {
         enabled: true
       },
+      injectRegister: 'auto',
       manifest: {
         name: "Duplo App",
         short_name: "duplo",
