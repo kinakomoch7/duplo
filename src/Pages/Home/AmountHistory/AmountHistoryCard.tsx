@@ -1,5 +1,6 @@
 import { Container, Grid, Paper } from "@mui/material"
 import { DeleteHistory } from "./DeleteHistory"
+import { NTypo } from "../../../common/NTypo"
 
 export const AmountHistoryCard = () => {
 
@@ -16,13 +17,19 @@ export const AmountHistoryCard = () => {
       <Container >
       <Grid container>
         <Grid item xs={leftSpace}>
-          {user}
+          <NTypo variant='h6' >
+            {user}
+          </NTypo>
         </Grid>
         <Grid item xs={12 - leftSpace}>
+          <NTypo variant='h6' >
           {amount}
+          </NTypo>
         </Grid>
         <Grid item xs={leftSpace}>
+          <NTypo variant='caption' >
           {date}
+          </NTypo>
         </Grid>
         <Grid item xs={12 - leftSpace}>
           <DeleteHistory />

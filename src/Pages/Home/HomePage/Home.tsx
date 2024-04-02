@@ -1,5 +1,6 @@
 // import { DifferencePay } from "../DifferencePay.tsx/DifferencePay";
 // import { EachPay } from "../EachPay/EachPay";
+import { AmountDisplay } from "../AmountDisplay/AmountDisplay";
 import { AmountHistory } from "../AmountHistory/AmountHistory";
 import { FloatingAddButton } from "../FloatingAddButton/FloatingAddButton";
 import { HamburgerMenu } from "../HamburgerMenu/HamburgerMenu";
@@ -15,7 +16,8 @@ export const Home = () => {
         <DifferencePay />
       </div> */}
       <HamburgerMenu />
-      <AmountHistory />
+      <AmountDisplay h='30vh'/>
+      <AmountHistory h='50vh'/>
       <FloatingAddButton />
     </div>
   );

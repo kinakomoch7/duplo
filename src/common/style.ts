@@ -9,7 +9,7 @@ export const BLOOD_ORANGE = '#FF7246';
 export const PALE_ORANGE = '#FEB49D';
 
 export const commonTextStyle:CSSProperties = {
-  fontWeight: 'bold',
+  fontWeight: 'inherit',
   textAlign: 'center',
   color: BLACK
 };
