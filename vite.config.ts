@@ -21,17 +21,17 @@ export default defineConfig({
         description: "duplo",
         icons: [
           {
-            src: "./public/images/ios/192.png",
+            src: "/images/ios/192.png",
             type: "image/png",
             sizes: "192x192"
           },
           {
-            src: "./public/images/ios/512.png",
+            src: "/images/ios/512.png",
             sizes: "512x512",
             type: "image/png"
           },
           {
-            src: "./public/images/ios/512.png",
+            src: "/images/ios/512.png",
             sizes: "512x512",
             type: "image/png",
             purpose: "any maskable"
