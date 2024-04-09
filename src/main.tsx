@@ -9,13 +9,11 @@ import { Menu } from './Pages/Menu/Menu';
 import { HOME_PATH, MENU_PATH, REGISTER_PATH } from './constants/path';
 // import { Footer } from './common/Footer/Footer';
 import { WHITE } from './common/style';
-import { NBox } from './common/NBox';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <div style={{backgroundColor:WHITE, height:'100vh'}}>
-        <NBox style={{ width:'100vw', height:'5vh' }} />
         <div style={{ height: '95vh' }}>
           <Routes >
             <Route path={HOME_PATH} element={ <Home /> } />
