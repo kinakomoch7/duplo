@@ -37,7 +37,7 @@ export default defineConfig({
             purpose: "any maskable"
           }
         ],
-        start_url: "index.html",
+        start_url: "/",
         display: "standalone",
         background_color: "#ffffff",
         theme_color: "#000000",
