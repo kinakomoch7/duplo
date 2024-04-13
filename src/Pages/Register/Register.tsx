@@ -38,8 +38,8 @@ export const Register = () => {
 
   return (
     <Container>
-      <Stack direction='column' spacing={3}>
-        <RadioGroup row onChange={selectPayUser}>
+      <Stack direction='column' spacing={3} sx={{  paddingTop:'10vh' }}>
+        <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }}>
           <FormControlLabel value={"自分"} control={<Radio />} label="自分" />
           <FormControlLabel value={"相手"} control={<Radio />} label="相手" />
         </RadioGroup>
@@ -53,7 +53,7 @@ export const Register = () => {
             </MenuItem>
           ))}
         </Select>
-        <NButton onClick={submitHandler} >確定</NButton>
+        <NButton onClick={submitHandler} variant="contained">確定</NButton>
       </Stack>
     </Container>
   );
