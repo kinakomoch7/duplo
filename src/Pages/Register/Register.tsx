@@ -40,8 +40,8 @@ export const Register = () => {
     <Container>
       <Stack direction='column' spacing={3} sx={{  paddingTop:'10vh' }}>
         <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }}>
-          <FormControlLabel value={"自分"} control={<Radio />} label="自分" />
-          <FormControlLabel value={"相手"} control={<Radio />} label="相手" />
+          <FormControlLabel value={"自分"} control={<Radio />} label={"自分"} />
+          <FormControlLabel value={"相手"} control={<Radio />} label={"相手"} />
         </RadioGroup>
         <TextField label="借入金" type="number" onChange={updatePayMoney}/>
         <TextField label="支払い日時" type="date" InputLabelProps={{ shrink:true }} onChange={(e)=> setPayTime(new Date(e.target.value))} />
