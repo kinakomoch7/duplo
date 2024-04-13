@@ -41,7 +41,7 @@ export const Register = () => {
     <Container>
       <Stack direction='column' spacing={3} sx={{  paddingTop:'10vh' }}>
         <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }}>
-          <FormControlLabel value={"自分"} control={<Radio />} label={<NTypo>自分</NTypo>} sx={{ paddingRight: '10px'}}/>
+          <FormControlLabel value={"自分"} control={<Radio />} label={<NTypo>自分</NTypo>}/>
           <FormControlLabel value={"相手"} control={<Radio />} label={<NTypo>相手</NTypo>}/>
         </RadioGroup>
         <TextField label="借入金" type="number" onChange={updatePayMoney}/>
