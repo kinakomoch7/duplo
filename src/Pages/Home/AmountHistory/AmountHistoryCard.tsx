@@ -12,6 +12,8 @@ export const AmountHistoryCard = (props:addLoanType) => {
   const leftSpace = 6
 
   const formattedPayTime = ToFormatDate(payTime)
+  const absMoney = Math.abs(money)
+  const formattedMoney = absMoney.toLocaleString('ja-JP', {style: 'currency', currency: 'JPY'})
 
 
   return (
@@ -25,7 +27,7 @@ export const AmountHistoryCard = (props:addLoanType) => {
         </Grid>
         <Grid item xs={12 - leftSpace}>
           <NTypo variant='h6' >
-          {money}
+          {formattedMoney}
           </NTypo>
         </Grid>
         <Grid item xs={leftSpace}>
