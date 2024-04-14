@@ -4,8 +4,11 @@ import { ChangeEvent, useState } from "react";
 import { addLoan } from "../../firebase/useAddLoan";
 import { addLoanType } from "../../types/addLoanType";
 import { NTypo } from "../../common/NTypo";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
+
+  const navigate = useNavigate();
 
   const [payUser, setPayUser] = useState<string>("自分");
   const [payMoney, setPayMoney] = useState<number>(0);
@@ -14,7 +17,7 @@ export const Register = () => {
 
   const selectList = ['ご飯', '交通費', 'イベント', 'その他']
 
-  const submitHandler = () => {
+  const submitHandler = async() => {
     const formattedPayMoney = payUser == '自分' ? payMoney : -payMoney;
     const addDoc:addLoanType = {
       payUser: payUser,
@@ -22,7 +25,13 @@ export const Register = () => {
       payTime: payTime,
       payType: payType
     }
-    addLoan(addDoc);
+
+    try {
+      await addLoan(addDoc);
+      navigate('/');
+    } catch (error) {
+      console.error('Error getting documents: ', error);
+    }
   }
 
   const selectPayUser = (e:ChangeEvent<HTMLInputElement>) => {

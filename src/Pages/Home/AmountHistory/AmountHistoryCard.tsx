@@ -1,15 +1,17 @@
-import { Container, Grid, Paper } from "@mui/material"
+import { Container, Grid, Paper, Stack } from "@mui/material"
 import { DeleteHistory } from "./DeleteHistory"
 import { NTypo } from "../../../common/NTypo"
+import { addLoanType } from "../../../types/addLoanType"
+import { ToFormatDate } from "./ToFormatDate"
 
-export const AmountHistoryCard = () => {
 
-  const date = '2002年12月30日'
-  const user = '山田太郎'
-  const amount = '1000円'
+export const AmountHistoryCard = (props:addLoanType) => {
+
+  const {payUser, money, payTime, payType} = props;
 
   const leftSpace = 6
 
+  const formattedPayTime = ToFormatDate(payTime)
 
 
   return (
@@ -18,21 +20,24 @@ export const AmountHistoryCard = () => {
       <Grid container>
         <Grid item xs={leftSpace}>
           <NTypo variant='h6' >
-            {user}
+            {payUser}
           </NTypo>
         </Grid>
         <Grid item xs={12 - leftSpace}>
           <NTypo variant='h6' >
-          {amount}
+          {money}
           </NTypo>
         </Grid>
         <Grid item xs={leftSpace}>
           <NTypo variant='caption' >
-          {date}
+            {formattedPayTime}
           </NTypo>
         </Grid>
         <Grid item xs={12 - leftSpace}>
-          <DeleteHistory />
+          <Stack direction='row' justifyContent='space-between'>
+            {payType}
+            <DeleteHistory />
+          </Stack>
         </Grid>
       </Grid>
       </Container>

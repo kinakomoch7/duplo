@@ -1,16 +1,21 @@
 import { Container, Grid } from "@mui/material"
 import { AmountHistoryCard } from "./AmountHistoryCard"
+import useAllLoans from "../../../firebase/useAllLoans"
 
 export const AmountHistory = (props: {h: string}) => {
 
-  const TEST = [ 1, 2, 3, 4, 5];
+  const { loans} = useAllLoans();
 
   return (
     <Container maxWidth='md' sx={{ maxHeight:props.h, overflow:'auto' }}>
       <Grid container spacing={3}>
-        {TEST.map((_item, index) => (
+        {loans.map((item, index) => (
           <Grid item xs={12} key={index}>
-            <AmountHistoryCard />
+            <AmountHistoryCard
+              payUser={item.payUser}
+              payType={item.payType}
+              money={item.money} 
+              payTime={item.payTime}/>
           </Grid>
         ))}
       </Grid>
