@@ -49,12 +49,12 @@ export const Register = () => {
   return (
     <Container>
       <Stack direction='column' spacing={3} sx={{  paddingTop:'10vh' }}>
-        <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }}>
+        <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }} defaultValue={payUser}>
           <FormControlLabel value={"自分"} control={<Radio />} label={<NTypo>自分</NTypo>}/>
           <FormControlLabel value={"相手"} control={<Radio />} label={<NTypo>相手</NTypo>}/>
         </RadioGroup>
-        <TextField label="借入金" type="number" onChange={updatePayMoney}/>
-        <TextField label="支払い日時" type="date" InputLabelProps={{ shrink:true }} onChange={(e)=> setPayTime(new Date(e.target.value))} />
+        <TextField label="借入金" type="number" onChange={updatePayMoney} defaultValue={0}/>
+        <TextField label="支払い日時" type="date" InputLabelProps={{ shrink:true }} onChange={(e)=> setPayTime(new Date(e.target.value))} defaultValue={payTime.toLocaleDateString('sv-SE')}/>
 
         <Select value={payType} onChange={selectPayType}>
           {selectList.map((option) => (
