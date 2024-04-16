@@ -5,6 +5,7 @@ import { addLoan } from "../../firebase/useAddLoan";
 import { addLoanType } from "../../types/addLoanType";
 import { NTypo } from "../../common/NTypo";
 import { useNavigate } from "react-router-dom";
+import { BackButton } from "./BackButton";
 
 export const Register = () => {
 
@@ -31,6 +32,7 @@ export const Register = () => {
       navigate('/');
     } catch (error) {
       console.error('Error getting documents: ', error);
+      navigate(-1);
     }
   }
 
@@ -48,7 +50,8 @@ export const Register = () => {
 
   return (
     <Container>
-      <Stack direction='column' spacing={3} sx={{  paddingTop:'10vh' }}>
+      <BackButton HeadTxt="登録"/>
+      <Stack direction='column' spacing={3} sx={{  paddingTop:'7vh' }}>
         <RadioGroup row onChange={selectPayUser} sx={{ justifyContent: 'center' }} defaultValue={payUser}>
           <FormControlLabel value={"自分"} control={<Radio />} label={<NTypo>自分</NTypo>}/>
           <FormControlLabel value={"相手"} control={<Radio />} label={<NTypo>相手</NTypo>}/>

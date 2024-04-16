@@ -1,13 +1,13 @@
 import { Container, Grid, Paper, Stack } from "@mui/material"
 import { DeleteHistory } from "./DeleteHistory"
 import { NTypo } from "../../../common/NTypo"
-import { addLoanType } from "../../../types/addLoanType"
 import { ToFormatDate } from "./ToFormatDate"
+import { LoanType } from "../../../types/LoanType"
 
 
-export const AmountHistoryCard = (props:addLoanType) => {
+export const AmountHistoryCard = (props:LoanType) => {
 
-  const {payUser, money, payTime, payType} = props;
+  const {id, payUser, money, payTime, payType} = props;
 
   const leftSpace = 6
 
@@ -38,7 +38,7 @@ export const AmountHistoryCard = (props:addLoanType) => {
         <Grid item xs={12 - leftSpace}>
           <Stack direction='row' justifyContent='space-between'>
             {payType}
-            <DeleteHistory />
+            <DeleteHistory id={id} />
           </Stack>
         </Grid>
       </Grid>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import db from './firebase';
-import { addLoanType } from '../types/addLoanType';
+import { LoanType } from '../types/LoanType';
 
 const useAllLoans = () => {
-  const [loans, setLoans] = useState<addLoanType[]>([]);
+  const [loans, setLoans] = useState<LoanType[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const useAllLoans = () => {
     };
 
     fetchLoans();
-  }, []);
+  }, [loans]);
 
   return { loans, loading };
 };
