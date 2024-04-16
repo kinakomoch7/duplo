@@ -5,7 +5,7 @@ import { BACK_BASE_COLOR } from "../../../common/style";
 export const styles = {
   container:css({
     width: '100vw',
-    height: '100vh',
+    height: '100%',
     backgroundColor: BACK_BASE_COLOR
   }),
   differenceBox:css({

@@ -7,6 +7,7 @@ export const BLACK = '#000000';
 export const GARY = '#D9D9D9';
 export const BLOOD_ORANGE = '#FF7246';
 export const PALE_ORANGE = '#FEB49D';
+export const BACK_BASE_COLOR = '#F8F8FF';
 
 export const commonTextStyle:CSSProperties = {
   fontWeight: 'inherit',

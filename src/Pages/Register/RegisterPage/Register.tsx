@@ -1,11 +1,11 @@
 import { Container, FormControlLabel, MenuItem, Radio, RadioGroup, Select, SelectChangeEvent, Stack, TextField } from "@mui/material";
-import { NButton } from "../../common/NButton";
+import { NButton } from "../../../common/NButton";
 import { ChangeEvent, useState } from "react";
-import { addLoan } from "../../firebase/useAddLoan";
-import { addLoanType } from "../../types/addLoanType";
-import { NTypo } from "../../common/NTypo";
+import { addLoan } from "../../../firebase/useAddLoan";
+import { addLoanType } from "../../../types/addLoanType";
+import { NTypo } from "../../../common/NTypo";
 import { useNavigate } from "react-router-dom";
-import { BackButton } from "./BackButton";
+import { BackButton } from "../BackButton";
 
 export const Register = () => {
 

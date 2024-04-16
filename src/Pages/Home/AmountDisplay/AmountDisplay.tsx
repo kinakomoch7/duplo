@@ -15,8 +15,8 @@ export const AmountDisplay = (props: {h : string}) => {
   ]
 
   return (
-    <Container>
-      <Paper sx={{ height: props.h, marginBottom: 5}}>
+    <Container >
+      <Paper sx={{ height: props.h, marginBottom: 5 }}>
         <Container >
           <Box sx={{ height:'5vh' }} />
           {BarList.map((item, index) => (

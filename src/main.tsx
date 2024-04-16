@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './Reset.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './Pages/Home/HomePage/Home';
-import { Register } from './Pages/Register/Register';
+import { Register } from './Pages/Register/RegisterPage/Register';
 import { NotFound } from './Pages/NotFound/NotFound';
 import { Menu } from './Pages/Menu/Menu';
 import { HOME_PATH, MENU_PATH, REGISTER_PATH } from './constants/path';

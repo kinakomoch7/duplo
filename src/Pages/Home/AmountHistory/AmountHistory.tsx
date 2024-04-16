@@ -7,7 +7,7 @@ export const AmountHistory = (props: {h: string}) => {
   const { loans } = useAllLoans();
 
   return (
-    <Container maxWidth='md' sx={{ maxHeight:props.h, overflow:'auto' }}>
+    <Container maxWidth='md' sx={{ height:props.h, overflow:'auto' }}>
       <Grid container spacing={3}>
         {loans.map((item, index) => (
           <Grid item xs={12} key={index}>
