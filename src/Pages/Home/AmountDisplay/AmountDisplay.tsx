@@ -3,13 +3,18 @@ import Paper from "@mui/material/Paper"
 import useSumLoans from "../../../firebase/useSumLoans"
 import { AmountDisplayBar } from "./AmountDisplayBar"
 import Box from "@mui/material/Box"
+import { useContext } from "react"
+import { userContext } from "../../Sing/UserContext"
 
 export const AmountDisplay = (props: {h : string}) => {
 
   const { sumLoansPositive, sumLoansNegative } = useSumLoans();
 
+  const context = useContext(userContext)
+  console.log(context)
+  
   const BarList = [
-    {label: '自分', money: sumLoansPositive ?? 0},
+    {label: "自分", money: sumLoansPositive ?? 0},
     {label: '相手', money: -(sumLoansNegative ?? 0)},
     {label: '残り', money: (sumLoansPositive ?? 0) + (sumLoansNegative ?? 0)}
   ]
