@@ -40,8 +40,12 @@ export const Register = () => {
     setPayUser(e.target.value);
   }
 
-  const updatePayMoney = (e: ChangeEvent<HTMLInputElement>) => {
+  const changePayMoney = (e: ChangeEvent<HTMLInputElement>) => {
     setPayMoney(Number(e.target.value));
+  }
+
+  const changePayTime = (e: ChangeEvent<HTMLInputElement>) => {
+    setPayTime(new Date(e.target.value));
   }
 
   const selectPayType = (e:SelectChangeEvent) => {
@@ -56,8 +60,8 @@ export const Register = () => {
           <FormControlLabel value={"自分"} control={<Radio />} label={<NTypo>自分</NTypo>}/>
           <FormControlLabel value={"相手"} control={<Radio />} label={<NTypo>相手</NTypo>}/>
         </RadioGroup>
-        <TextField label="借入金" type="number" onChange={updatePayMoney} defaultValue={0}/>
-        <TextField label="支払い日時" type="date" InputLabelProps={{ shrink:true }} onChange={(e)=> setPayTime(new Date(e.target.value))} defaultValue={payTime.toLocaleDateString('sv-SE')}/>
+        <TextField label="借入金" type="number" onChange={changePayMoney} defaultValue={0}/>
+        <TextField label="支払い日" type="date" InputLabelProps={{ shrink:true }} onChange={changePayTime} defaultValue={payTime.toLocaleDateString('sv-SE')}/>
 
         <Select value={payType} onChange={selectPayType}>
           {selectList.map((option) => (
