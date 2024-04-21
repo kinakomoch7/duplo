@@ -42,7 +42,11 @@ export default defineConfig({
         background_color: "#ffffff",
         theme_color: "#000000",
         lang: "ja"
-      }
+      },
+      workbox: {
+        navigateFallbackDenylist: [/\/__\/auth/],
+      },
+
     })
   ],
 })

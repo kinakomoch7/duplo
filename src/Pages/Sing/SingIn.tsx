@@ -19,7 +19,7 @@ export const SignIn = () => {
       firebase.auth.GoogleAuthProvider.PROVIDER_ID
     ],
     signInSuccessUrl: import.meta.env.VITE_FIREBASE_SIGNIN_SUCCESS_URL,
-    signInFlow: 'popup',
+    signInFlow: 'redirect',
   });
 
   if (user) {
