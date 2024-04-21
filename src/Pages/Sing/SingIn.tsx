@@ -7,20 +7,24 @@ import { Stack } from "@mui/material";
 import firebase from 'firebase/compat/app';
 import * as firebaseui from 'firebaseui'
 import 'firebaseui/dist/firebaseui.css'
+import { useEffect } from "react";
 
 
 export const SignIn = () => {
 
   const [user] = useAuthState(auth);
-  const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
 
-  ui.start('#firebaseui-auth-container', {
-    signInOptions: [
-      firebase.auth.GoogleAuthProvider.PROVIDER_ID
-    ],
-    signInSuccessUrl: import.meta.env.VITE_FIREBASE_SIGNIN_SUCCESS_URL,
-    signInFlow: 'redirect',
-  });
+  useEffect(() => {
+    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(auth);
+
+    ui.start('#firebaseui-auth-container', {
+      signInOptions: [
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID
+      ],
+      signInSuccessUrl: import.meta.env.VITE_FIREBASE_SIGNIN_SUCCESS_URL,
+      signInFlow: 'redirect',
+    });
+  }, [])
 
   if (user) {
     return <SignAuth email={user.email}/>
