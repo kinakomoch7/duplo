@@ -20,6 +20,7 @@ export const SignIn = () => {
     ],
     signInSuccessUrl: import.meta.env.VITE_FIREBASE_SIGNIN_SUCCESS_URL,
     signInFlow: 'popup',
+    credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
   });
 
   if (user) {
